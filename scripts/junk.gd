@@ -2,6 +2,8 @@ extends RigidBody2D
 
 @export var type : String
 
+@export var canBePickedUp : bool = false
+
 var collectionArea : Area2D
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +18,8 @@ func _process(delta):
 
 func _on_collection_area_body_entered(body):
 	print("Player entered")
-	var pack = $"../Player/Pack"
-	pack.add_junk(type)
-	
-	queue_free()
+	if canBePickedUp:
+		var pack = $"../Player/Pack"
+		pack.add_junk(type)
+		
+		queue_free()

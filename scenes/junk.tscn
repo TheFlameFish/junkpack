@@ -10,6 +10,7 @@ size = Vector2(16, 16)
 [node name="Junk" type="RigidBody2D"]
 mass = 0.01
 script = ExtResource("1_6whib")
+canBePickedUp = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xwqfw")

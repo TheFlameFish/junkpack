@@ -9,7 +9,7 @@ bounce = 0.5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ka2g6"]
 
 [node name="Player" type="RigidBody2D"]
-collision_layer = 3
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_4di8u")
 gravity_scale = 0.0
 
