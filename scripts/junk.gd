@@ -19,7 +19,7 @@ func _process(delta):
 func _on_collection_area_body_entered(body):
 	print("Player entered")
 	if canBePickedUp:
-		var pack = $"../Player/Pack"
+		var pack = body.get_node("Pack")
 		pack.add_junk(type)
 		
 		queue_free()

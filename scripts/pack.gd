@@ -1,11 +1,11 @@
 extends Node2D
 
-@export var power : float = 10000;
+@export var power : float = 5000;
 
 @export var junk = ["hairdryer"]
-@export var junkQuantity = [1]
+@export var junkQuantity = [6]
 
-var totalJunk : int = 1
+var totalJunk : int = 6
 
 var player : RigidBody2D
 
@@ -88,3 +88,9 @@ func launch_junk(type,vector):
 	launchedJunk.global_position = global_position
 	
 	launchedJunk.apply_central_force(vector)
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	launchedJunk.set_collision_layer_value(1,true)
+	launchedJunk.set_collision_mask_value(2,true)
+	launchedJunk.canBePickedUp = true
