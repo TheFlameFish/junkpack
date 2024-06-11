@@ -86,6 +86,7 @@ func launch_junk(type,vector):
 	
 	get_tree().root.add_child(launchedJunk)
 	launchedJunk.global_position = global_position
+	launchedJunk.linear_velocity = player.linear_velocity
 	
 	launchedJunk.apply_central_force(vector)
 	
