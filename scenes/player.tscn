@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfd8rraln0kvi"]
+
+[ext_resource type="Texture2D" uid="uid://bditanoelyqw0" path="res://icon.svg" id="1_y0igk"]
+[ext_resource type="Script" path="res://scripts/pack.gd" id="2_35mfv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4di8u"]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka2g6"]
+
+[node name="Player" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_4di8u")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_ka2g6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y0igk")
+
+[node name="Pack" type="Node2D" parent="."]
+script = ExtResource("2_35mfv")
