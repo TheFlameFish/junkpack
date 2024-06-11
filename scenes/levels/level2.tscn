@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://drmrqfqxmwajv"]
+
+[ext_resource type="PackedScene" uid="uid://cfd8rraln0kvi" path="res://scenes/player.tscn" id="1_gh8xd"]
+[ext_resource type="Texture2D" uid="uid://bditanoelyqw0" path="res://icon.svg" id="2_wweb2"]
+[ext_resource type="PackedScene" uid="uid://b4d0xvsa8i30d" path="res://scenes/junk_hairdryer.tscn" id="3_1d2m0"]
+[ext_resource type="PackedScene" uid="uid://by0kp5wmxmork" path="res://scenes/finish.tscn" id="4_s8f25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxagg"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_gh8xd")]
+position = Vector2(-500, 0)
+metadata/startingJunk = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-700, 250)
+scale = Vector2(5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_wxagg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_wweb2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, -250)
+scale = Vector2(20, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_wxagg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("2_wweb2")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-1000, 0)
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_wxagg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("2_wweb2")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(250, 200)
+scale = Vector2(1, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_wxagg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+texture = ExtResource("2_wweb2")
+
+[node name="Junk_Hairdryer" parent="." instance=ExtResource("3_1d2m0")]
+position = Vector2(1, 7)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-400, 500)
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_wxagg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+texture = ExtResource("2_wweb2")
+
+[node name="Finish" parent="." instance=ExtResource("4_s8f25")]
+scale = Vector2(5, 1)

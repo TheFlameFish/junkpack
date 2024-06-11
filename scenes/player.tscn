@@ -19,6 +19,7 @@ scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ka2g6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 rotation_smoothing_enabled = true
