@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv153x0nu4wx3"]
+
+[ext_resource type="PackedScene" uid="uid://cj62fahoswa3f" path="res://scenes/junk.tscn" id="1_t61dx"]
+[ext_resource type="Texture2D" uid="uid://bditanoelyqw0" path="res://icon.svg" id="2_2re17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tmfc"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6s8v"]
+size = Vector2(80, 80)
+
+[node name="Junk" instance=ExtResource("1_t61dx")]
+mass = 1.0
+type = "placeholder"
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_2tmfc")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2re17")
+
+[node name="CollectionCollider" parent="CollectionArea" index="0"]
+shape = SubResource("RectangleShape2D_o6s8v")

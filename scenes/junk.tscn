@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj62fahoswa3f"]
+
+[ext_resource type="Script" path="res://scripts/junk.gd" id="1_6whib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwqfw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6heo"]
+
+[node name="Junk" type="RigidBody2D"]
+mass = 0.01
+script = ExtResource("1_6whib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xwqfw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollectionArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollectionCollider" type="CollisionShape2D" parent="CollectionArea"]
+shape = SubResource("RectangleShape2D_b6heo")
+
+[connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]

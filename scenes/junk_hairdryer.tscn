@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4d0xvsa8i30d"]
+
+[ext_resource type="PackedScene" uid="uid://cj62fahoswa3f" path="res://scenes/junk.tscn" id="1_ei4cv"]
+[ext_resource type="Texture2D" uid="uid://cqrjowe34d8qm" path="res://art/placeholder/hairdryer.png" id="2_j5gog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoi4r"]
+size = Vector2(32, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg68b"]
+size = Vector2(36, 40)
+
+[node name="Junk" instance=ExtResource("1_ei4cv")]
+mass = 1.0
+type = "hairdryer"
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_qoi4r")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_j5gog")
+
+[node name="CollectionCollider" parent="CollectionArea" index="0"]
+shape = SubResource("RectangleShape2D_yg68b")

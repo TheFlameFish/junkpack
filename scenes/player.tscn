@@ -9,6 +9,7 @@ bounce = 0.5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ka2g6"]
 
 [node name="Player" type="RigidBody2D"]
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_4di8u")
 gravity_scale = 0.0
 
@@ -18,7 +19,8 @@ shape = SubResource("RectangleShape2D_ka2g6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+position_smoothing_speed = 20.0
+rotation_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_y0igk")
