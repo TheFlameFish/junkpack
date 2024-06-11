@@ -33,8 +33,11 @@ shape = SubResource("RectangleShape2D_ka2g6")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
 texture = ExtResource("1_sr5qb")
 
-[node name="Junk" parent="." instance=ExtResource("3_h8fmn")]
-position = Vector2(204, -25)
+[node name="Junk_Hairdryer" parent="." instance=ExtResource("3_h8fmn")]
+position = Vector2(159, -64)
 
-[node name="Junk2" parent="." instance=ExtResource("4_70dcb")]
-position = Vector2(-251, -28)
+[node name="Junk_Placeholder" parent="." instance=ExtResource("4_70dcb")]
+position = Vector2(-192, -19)
+
+[node name="Junk_Placeholder2" parent="." instance=ExtResource("4_70dcb")]
+position = Vector2(-139, -144)

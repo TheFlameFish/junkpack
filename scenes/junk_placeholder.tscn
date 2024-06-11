@@ -9,7 +9,7 @@ size = Vector2(64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6s8v"]
 size = Vector2(80, 80)
 
-[node name="Junk" instance=ExtResource("1_t61dx")]
+[node name="Junk_Placeholder" instance=ExtResource("1_t61dx")]
 mass = 1.0
 type = "placeholder"
 

@@ -9,7 +9,7 @@ size = Vector2(32, 36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg68b"]
 size = Vector2(36, 40)
 
-[node name="Junk" instance=ExtResource("1_ei4cv")]
+[node name="Junk_Hairdryer" instance=ExtResource("1_ei4cv")]
 mass = 1.0
 type = "hairdryer"
 
