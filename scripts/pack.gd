@@ -2,12 +2,14 @@ extends Node2D
 
 @export var power : float = 5000;
 
+@onready var player : RigidBody2D = $".."
+
 @export var junk = ["hairdryer"]
-@export var junkQuantity = [6]
+@onready var junkQuantity = [player.get_meta("startingJunk")]
 
-var totalJunk : int = 6
+@onready var totalJunk : int = player.get_meta("startingJunk")
 
-var player : RigidBody2D
+
 
 var rng
 
@@ -16,7 +18,6 @@ var placeholder = preload("res://scenes/junk_placeholder.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = $".."
 	rng = RandomNumberGenerator.new()
 
 
@@ -90,8 +91,10 @@ func launch_junk(type,vector):
 	
 	launchedJunk.apply_central_force(vector)
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(10).timeout
 	
-	launchedJunk.set_collision_layer_value(1,true)
-	launchedJunk.set_collision_mask_value(2,true)
-	launchedJunk.canBePickedUp = true
+	launchedJunk.queue_free()
+	
+	#launchedJunk.set_collision_layer_value(1,true)
+	#launchedJunk.set_collision_mask_value(2,true)
+	#launchedJunk.canBePickedUp = true

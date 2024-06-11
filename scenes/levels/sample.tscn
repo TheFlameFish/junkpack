@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://bft1c62f5ov84"]
 
-[ext_resource type="PackedScene" uid="uid://cfd8rraln0kvi" path="res://scenes/player.tscn" id="1_njglq"]
-[ext_resource type="Texture2D" uid="uid://bditanoelyqw0" path="res://icon.svg" id="1_sr5qb"]
-[ext_resource type="PackedScene" uid="uid://b4d0xvsa8i30d" path="res://scenes/junk_hairdryer.tscn" id="3_h8fmn"]
-[ext_resource type="PackedScene" uid="uid://dv153x0nu4wx3" path="res://scenes/junk_placeholder.tscn" id="4_70dcb"]
+[ext_resource type="PackedScene" uid="uid://cfd8rraln0kvi" path="res://scenes/player.tscn" id="1_13gvl"]
+[ext_resource type="Texture2D" uid="uid://bditanoelyqw0" path="res://icon.svg" id="2_u6d5k"]
+[ext_resource type="PackedScene" uid="uid://b4d0xvsa8i30d" path="res://scenes/junk_hairdryer.tscn" id="3_kfrgv"]
+[ext_resource type="PackedScene" uid="uid://dv153x0nu4wx3" path="res://scenes/junk_placeholder.tscn" id="4_nu4jd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ka2g6"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_njglq")]
+[node name="Player" parent="." instance=ExtResource("1_13gvl")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 500)
@@ -20,7 +20,7 @@ scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ka2g6")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("1_sr5qb")
+texture = ExtResource("2_u6d5k")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-650, 250)
@@ -31,13 +31,13 @@ scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ka2g6")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-texture = ExtResource("1_sr5qb")
+texture = ExtResource("2_u6d5k")
 
-[node name="Junk_Hairdryer" parent="." instance=ExtResource("3_h8fmn")]
+[node name="Junk_Hairdryer" parent="." instance=ExtResource("3_kfrgv")]
 position = Vector2(159, -64)
 
-[node name="Junk_Placeholder" parent="." instance=ExtResource("4_70dcb")]
+[node name="Junk_Placeholder" parent="." instance=ExtResource("4_nu4jd")]
 position = Vector2(-192, -19)
 
-[node name="Junk_Placeholder2" parent="." instance=ExtResource("4_70dcb")]
+[node name="Junk_Placeholder2" parent="." instance=ExtResource("4_nu4jd")]
 position = Vector2(-139, -144)
